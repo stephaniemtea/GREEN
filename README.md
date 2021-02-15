@@ -1,2 +1,3 @@
 # GREEN
-a sustainable web application
+An interactive web application designed to help people become more sustainable
+
