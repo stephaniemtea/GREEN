@@ -1,8 +1,8 @@
 CREATE TABLE tasks(
 	task_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    task_name VARCHAR(100) NOT NULL,
-    task_desc VARCHAR(255) NOT NULL,
-    task_type VARCHAR(6) NOT NULL,
+    	task_name VARCHAR(100) NOT NULL,
+    	task_desc VARCHAR(255) NOT NULL,
+    	task_type VARCHAR(6) NOT NULL,
 	task_num_points INT NOT NULL,
 	task_progress CHAR(1) NOT NULL
 );
