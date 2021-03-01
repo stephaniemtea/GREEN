@@ -3,6 +3,8 @@ CREATE TABLE addresses(
     address_one VARCHAR(255) NOT NULL,
     address_two VARCHAR(255),
     city VARCHAR(100) NOT NULL,
-    state VARCHAR(100) NOT NULL,
+    state CHAR(5) NOT NULL,
     zip VARCHAR(10) NOT NULL
 );
+
+INSERT INTO addresses(address_one, city, state, zip) VALUES ('Rock Creek Drive', 'Montgomery', 'MD', 36109);
