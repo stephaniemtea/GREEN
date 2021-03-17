@@ -1,0 +1,59 @@
+/*** CORE HTML ***/
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: "Barlow", sans-serif;
+    overflow-y: scroll;
+}
+
+/*** REUSABLE CLASSES ***/
+.main-container {
+    max-width: 1250px;
+    width: 90%;
+    margin: 0 auto;
+    padding: 5rem 0 0 0;
+}
+
+/* Colors */
+.bg-main-green {
+    background-color: #5C967D;
+}
+
+.color-primary {
+    color: #5C967D;
+}
+
+.color-secondary {
+    color: #B5C9C3;
+}
+
+.color-final {
+    color: #507DBC;
+}
+
+/* Typography */
+.page-header {
+    text-align: center;
+    font-weight: 300;
+}
+
+.page-section {
+    text-align: center;
+    font-weight: 150;
+}
+
+.lower-weight {
+    font-weight: 300;
+}
+
+/*** HOME ***/
+.feature-image {
+    height: 500px;
+    object-fit: cover;
+    object-position: 50% 50%;
+}
+ 
