@@ -56,4 +56,95 @@ body {
     object-fit: cover;
     object-position: 50% 50%;
 }
+
+/*** TASKS ***/
+.task-section {
+  color: #5C967D !important;
+  padding-top: 2vw !important;
+  margin-top: 2vw !important;
+  font-weight: bold !important;
+}
+
+ul, li {
+  list-style-type: square type none;
+  margin: 0;
+  padding: 0;
+}
+
+.label-text {
+  color: #000000;
+  font-weight: 300 !important;
+}
+
+.dot {
+    height: 6px;
+    width: 6px;
+    margin-left: 8px;
+    margin-right: 3px;
+    margin-top: 2px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 50%;
+    display: inline-block
+}
+
+.overview {
+    color: #5C967D;
+}
+
+@keyframes click-wave {
+    0% {
+        height: 40px;
+        width: 40px;
+        opacity: 0.15;
+        position: relative
+    }
+
+    100% {
+        height: 200px;
+        width: 200px;
+        margin-left: -80px;
+        margin-top: -80px;
+        opacity: 0
+    }
+}
+
+.option-input.radio {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    position: relative;
+    top: 10.3px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 30px;
+    width: 30px;
+    margin-right: 0.5rem;
+    border-radius: 50%;
+    z-index: 1000;
+    transition: all 0.15s ease-out 0s;
+    background: #cbd1d8;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    outline: none;
+}
+
+.option-input:hover {
+    background: #9faab7
+}
+
+.option-input:checked {
+    background: #5C967D;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: #5C967D !important;
+}
+
  
