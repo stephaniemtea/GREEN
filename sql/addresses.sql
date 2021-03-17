@@ -7,4 +7,4 @@ CREATE TABLE addresses(
     zip VARCHAR(10) NOT NULL
 );
 
-INSERT INTO addresses(address_one, city, state, zip) VALUES ('Rock Creek Drive', 'Montgomery', 'MD', 36109);
+INSERT INTO addresses(address_one, city, state, zip) VALUES ('1 New Saddle St.', 'Amsterdam', 'NY', 12010);

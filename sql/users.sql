@@ -12,4 +12,4 @@ CREATE TABLE users (
     FOREIGN KEY (user_address) REFERENCES addresses(address_id)
 );
 
-INSERT INTO users (first_name, last_name, email, phone, username, user_address, user_current_points, user_level) VALUES ('Giau', 'Tran', 'gt231@gmail.com', '4132046058', 'gt231', 1, 0, 0);
+INSERT INTO users (first_name, last_name, email, phone, username, user_address, user_current_points, user_level) VALUES ('System', 'Administrator', 'system_admin@gmail.com', 2025550151, 'system_admin', 2, 0, 0);
