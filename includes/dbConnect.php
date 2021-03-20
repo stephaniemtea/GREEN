@@ -1,7 +1,7 @@
 <?php
 
 require "dbConfig.php";
-
+  
 // Connect Helper
 $conn = mysqli_connect($dbhost, $dbuser, $dbpassword, $dbname);//
 
