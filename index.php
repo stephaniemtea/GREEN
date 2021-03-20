@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css">
   <!-- font awesome (desktop) -->
   <link rel="stylesheet" href="/css/all.css">
-	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="main.css">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
 	 crossorigin="anonymous">
 	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
@@ -98,11 +98,23 @@
       </div>
       <div class="col-md-4">
         <div class="d-flex flex-row align-items-center notes-title">
-            <h4>Tasks</h4>
-        </div>a
-        <div class="d-flex"> <label><input type="checkbox" class="option-input radio"><span class="label-text">Task 1</span></label></div>
-        <div class="d-flex "> <label><input type="checkbox" class="option-input radio"><span class="label-text">Task 2</span></label></div>
-        <div class="d-flex"> <label><input type="checkbox" class="option-input radio"><span class="label-text">Task 3</span></label></div>
+            <h4>Daily Tasks</h4>
+        </div>
+        
+        <div class="d-flex"> 
+        <?php
+          require "./includes/dbConnect.php";
+            $result = mysqli_query($conn, "SELECT task_name FROM `tasks` WHERE task_type = daily");
+            if (mysqli_num_rows($result) > 0) {
+              while ($row = mysqli_fetch_assoc($result)) {
+                echo "<label><input type='checkbox' class='option-input-radio' value='$row['task_name']'><span class='label-text'>" . $row['item_name'] . '</span></label></br>';
+              }
+            } else {
+              echo "0 results";
+            }
+          require "./includes/dbDisconnect.php";
+        ?>
+      </div>
       <!-- End of Row 1 -->
     </div>
     <!-- End of Container -->
@@ -110,3 +122,8 @@
 
 </body>
 </html>
+
+
+
+
+    
