@@ -49,20 +49,20 @@
 			  <li class="nav-item">
 				  <a class="nav-link" href="#">Social</a>
 			  </li>
-			  <li class="nav-item dropdown">
+				<li class="nav-item dropdown">
 				  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-expanded="false">Account</a>
-				  <div class="dropdown-menu" aria-labelledby="navbarDropdownOrder">
-					  <a class="dropdown-item" href="#">Login</a>
-						<a class="dropdown-item" href="#">Register</a>
-          </div>
-			  </li>
-		  </ul>
-    </div>
+					<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownOrder">
+						<a href="#" class="dropdown-item">Login</a>
+						<a href="#" class="dropdown-item">Register</a>
+					</div>
+				</li>
+			</ul>
+		</div>
 	</nav>
 
 	<div class="main-container">
     <div class="row">
-      <div class="col-md-8">
+      <div class="col-sm-8">
         <div id="myCarousel" class="carousel slide mb-3" data-ride="carousel">
           <!-- Indicators -->
           <ol class="carousel-indicators">
@@ -72,41 +72,70 @@
           </ol>
           <!-- Wrapper for slides -->
           <div class="carousel-inner">
-            <div class="item active">
+            <div class="carousel-item active">
               <img src="https://images.unsplash.com/photo-1575986767340-5d17ae767ab0?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1491&q=80" class="d-block w-100 carousel-image" alt="Photo of the Day">
               <div class='carousel-caption d-none d-md-block'>
                 <h5>$title</h5>
                 <p>$content</p>
-              </div>
-            </div>
-            
-            </div>
-            <!-- End of Carousel Content -->
-          </div>
+              </div> 
+            </div> <!-- End of Slide 1 Content -->
+			<div class="carousel-item">
+              <img src="https://images.unsplash.com/photo-1610128114197-485d933885c5?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" class="d-block w-100 carousel-image" alt="Photo of the Day">
+              <div class='carousel-caption d-none d-md-block'>
+                <h5>$title</h5>
+                <p>$content</p>
+              </div> 
+            </div> <!-- End of Slide 2 Content -->
+           </div> <!-- End of Carousel Content -->
           <!-- Left and right controls -->
-            <a class="carousel-control-prev" href="#mainCarousel" role="button" data-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#mainCarousel" role="button" data-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="sr-only">Next</span>
-            </a>
-            <!-- End of Carousel -->
-        </div>
-        <!-- End of Column 1 -->
-      </div>
-      <div class="col-md-4">
-        <div class="d-flex flex-row align-items-center notes-title">
-            <h4>Tasks</h4>
-        </div>
-        <div class="d-flex"> <label><input type="checkbox" class="option-input radio"><span class="label-text">Task 1</span></label></div>
-        <div class="d-flex "> <label><input type="checkbox" class="option-input radio"><span class="label-text">Task 2</span></label></div>
-        <div class="d-flex"> <label><input type="checkbox" class="option-input radio"><span class="label-text">Task 3</span></label></div>
-      <!-- End of Row 1 -->
-    </div>
-    <!-- End of Container -->
-  </div>
+          <a class="carousel-control-prev" href="#mainCarousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+		  </a>
+          <a class="carousel-control-next" href="#mainCarousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div> <!-- End of Carousel -->
+      </div> <!-- End of Column 1 -->
+      <div class="col-sm-4">
+		<h4 class="page-header"> Daily Tasks </h4>
+		<div class='d-flex flex-column align-items-left notes-title'>
+			<?php
+				require "./includes/dbConnect.php";
+				// selects random number of weekly and daily tasks 
+				$result = mysqli_query($conn, "SELECT task_name, task_type FROM tasks WHERE task_type='daily' ORDER BY RAND() LIMIT 3");
+				if (mysqli_num_rows($result) > 0) {
+					while($row = mysqli_fetch_assoc($result)) {
+						echo "<div class='d-flex'><label><input type='checkbox' class='option-input radio'><span class='label-text'>" . $row['task_name']."</br></span></input></label></div>";
+					}
+				} else {
+					echo "0 results";
+				}
+				echo "</div>";  //End of Daily Tasks Column
+				require "./includes/dbDisconnect.php";
+			?>
+		<h4 class="page-header"> Weekly Tasks </h4>
+			<div class='d-flex flex-column align-items-left notes-title'>
+			<?php
+				require "./includes/dbConnect.php";
+				// selects random number of weekly and daily tasks 
+				$result = mysqli_query($conn, "SELECT task_name, task_type FROM tasks WHERE task_type='weekly' ORDER BY RAND() LIMIT 3");
+				if (mysqli_num_rows($result) > 0) {
+					while($row = mysqli_fetch_assoc($result)) {
+						echo "<div class='d-flex'><label><input type='checkbox' class='option-input radio'><span class='label-text'>" . $row['task_name']."</br></span></input></label></div>";
+					}
+				} else {
+					echo "0 results";
+				}
+				echo "</div>"; // End of Weekly Tasks Column
+				require "./includes/dbDisconnect.php";
+			?>
+		</div> <!-- End of Column 2 -->
+	</div> <!-- End of Row 1 -->
+  </div> <!-- End of Container -->
 
 </body>
 </html>
+
+

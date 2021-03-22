@@ -44,6 +44,10 @@ body {
   color: #14080E !important;
 }
 
+.nav-item dropdown {
+	justify-content: right !important;
+}
+
 .dropdown-menu a:link, .dropdown-menu a:visited {
   color: #14080E !important;
 }
@@ -58,10 +62,15 @@ body {
 
 /* Typography */
 .page-header {
-  text-align: center;
-  font-weight: 350;
-  padding-top: 1vw;
-  color: #5C967D !important; 
+	text-align: center !important;
+	font-weight: bold !important;
+	padding-top: 1vw;
+	color: #5C967D !important; 
+}
+
+.section-header {
+  font-weight: 300;
+  pading-top: 1vw;
 }
 
 .lower-weight {
