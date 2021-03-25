@@ -27,38 +27,27 @@
 <body>
 
   <nav class="navbar navbar-expand-md navbar-dark bg-main-green fixed-top">
-    <a class="navbar-brand " href="#">GREEN</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-      aria-expanded="false" aria-label="Toggle navigation">
+	  <a class="navbar-brand " href="#">GREEN</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent" <ul class="navbar-nav ml-auto">
-      <li class="nav-item">
-        <a class="nav-link" href="#">Events</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Articles</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Locator</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Rewards</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Social</a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-expanded="false">Account</a>
-        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownOrder">
-          <a href="#" class="dropdown-item">Login</a>
-          <a href="#" class="dropdown-item">Register</a>
-        </div>
-      </li>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="nav navbar-nav ml-auto">
+        <li class="nav-item dropdown"><a class="nav-link" href="#">Events</a></li>
+        <li class="nav-item dropdown"><a class="nav-link" href="#">Articles</a></li>
+        <li class="nav-item dropdown"><a class="nav-link" href="#">Locator</a></li>
+        <li class="nav-item dropdown"><a class="nav-link" href="#">Rewards</a></li>
+        <li class="nav-item dropdown"><a class="nav-link" href="#">Social</a></li>
+        <li class="dropdown">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Account<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Login</a></li>
+            <li><a class="dropdown-item" href="#">Register</a></li>
+          </ul>
+        </li>
       </ul>
     </div>
-  </nav>
+	</nav>
 
   <div class="main-container">
     <div class="row">
