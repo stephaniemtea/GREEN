@@ -18,8 +18,8 @@
 </head>
 
 <body>
-<<<<<<< HEAD
-	<nav class="navbar navbar-expand-md navbar-dark bg-main-green fixed-top"> <a class="navbar-brand " href="#">GREEN</a>
+	<nav class="navbar navbar-expand-md navbar-dark bg-main-green fixed-top"> 
+		<a class="navbar-brand nav-link" href="#">GREEN<span class="sr-only">(current)</span></a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
 		<div class="collapse navbar-collapse" id="navbarSupportedContent"> 
 			<ul class="navbar-nav ml-auto">
@@ -84,7 +84,7 @@
 				<?php
 				require "./includes/dbConnect.php";
 				// selects random number of weekly and daily tasks 
-				$result = mysqli_query($conn, "SELECT task_name, task_type FROM tasks WHERE task_type='weekly' ORDER BY RAND() LIMIT 3");
+				$result = mysqli_query($conn, "SELECT task_name, task_type FROM tasks WHERE task_type='weekly' ORDER BY RAND() LIMIT 2");
 				if (mysqli_num_rows($result) > 0) {
 					while($row = mysqli_fetch_assoc($result)) {
 						echo "<div class='d-flex'><label><input type='checkbox' class='option-input radio'><span class='label-text'>" . $row['task_name']."</br></span></input></label></div>";
@@ -97,6 +97,16 @@
 				?> 
 			</div> <!-- End of Column 2 -->
 		</div> <!-- End of Row 1 -->
+		<div class="row">
+			<div class="col-md-6 icebreaker>
+				<form>
+					<div class="form-group">
+						<label for="icebreaker">How long was your shower yesterday night or this morning?</label>
+						<input type="number" min="1" class="form-control" id="icebreaker">
+					</div>
+				</form>
+			</div> <!-- End of Column -->
+		</div> <!-- End of Row 2 -->
 	</div> <!-- End of Container -->
 </body>
 
