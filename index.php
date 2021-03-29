@@ -28,6 +28,7 @@
 				<li class="nav-item"> <a class="nav-link" href="#">Locator</a> </li>
 				<li class="nav-item"> <a class="nav-link" href="#">Rewards</a> </li>
 				<li class="nav-item"> <a class="nav-link" href="#">Social</a> </li>
+				<li class="nav-item dropdown"><a class="nav-link" href="#">About Us</a></li>
 				<li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-expanded="false">Account</a>
 					<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownOrder"> <a href="#" class="dropdown-item">Login</a> <a href="#" class="dropdown-item">Register</a> </div>
 				</li>
