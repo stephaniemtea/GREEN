@@ -35,6 +35,20 @@ body {
     color: #507DBC;
 }
 
+/* Buttons */
+.btn-site-main {
+    color: white !important;
+    background-color: #5C967D !important;
+    border-color: #5C967D !important;
+}
+
+/* A smaller button of the main button */
+.btn-sm, .btn-lg, .btn-primary-color {
+    color: white !important;
+    background-color: #5C967D !important;
+    border-color: #5C967D !important;
+}
+
 /* Navigation */
 .navbar-brand {
   color: #14080E !important;
@@ -136,4 +150,9 @@ input[type=checkbox]:checked + span.label-text{
   text-decoration: line-through;
   content: "\f00c" !important;
   color: #000;
+}
+
+/*** About Us + Contact Us ***/
+.page-link a:visited, .page-link a:active, .page-link a:link {
+	color: #14080E !important;
 }
