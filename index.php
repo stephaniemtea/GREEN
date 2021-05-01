@@ -75,13 +75,43 @@
     <!-- End of Row 1 -->
     <div class="row">
       <div class="col-md-6 icebreaker>
-        <form>
-        <div class="form-group">
-        <label for="icebreaker">How long was your shower yesterday night or this morning?</label>
-        <input type="number" min="1" class="form-control" id="icebreaker">
-      </div>
-      </form>
-    </div>
+		<?php 
+			require "./includes/dbConnect.php";
+				echo "<form method='post' action='<?php echo $_SERVER['PHP_SELF'];?>'>
+					<label for='icebreaker'>";
+					$result = mysqli_query($conn, "SELECT icebreaker_name FROM `icebreakers` WHERE icebreaker_id = 1");
+					if (mysqli_num_rows($result) > 0) {
+						while($row = mysqli_fetch_assoc($result)) {
+							echo "<label for='icebreaker'>" . $row['icebreaker_name'];
+						}
+					} else {
+						echo "0 results";
+					}
+			require "./includes/dbDisconnect.php";
+
+			echo "</label>
+				<input type='number' name='slength' min='1' class='form-control'>
+				<input type='submit' name='submit' value='submit'>
+				</form>";
+	
+			if (isset($_POST['submit']) or $_SERVER["REQUEST_METHOD"] == "POST") {	
+			// collect value of input field
+			$i_answer = $_POST['slength'];
+	
+				if (empty($i_answer)) {
+					echo "Sorry, please enter a number";
+				} else {
+					if ($i_answer <= 5) {
+						echo "Wow, you showered in " . $i_answer . " minutes? Keep up the good work!";
+					} else if ($i_answer >5 and $i_answer<10) {
+						echo "You showered in " . $i_answer . " minutes. That's not bad, but can you do better?";
+					} else {
+						echo "Did you take a " . $i_answer . " minute shower? Maybe try and take a shorter one next time!";
+					}
+				}
+			}
+
+		?>
     <!-- End of Column -->
   </div>
   <!-- End of Row 2 -->
