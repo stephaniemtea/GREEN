@@ -40,6 +40,7 @@ body {
     color: white !important;
     background-color: #5C967D !important;
     border-color: #5C967D !important;
+	padding-top: 5px;
 }
 
 /* A smaller button of the main button */
